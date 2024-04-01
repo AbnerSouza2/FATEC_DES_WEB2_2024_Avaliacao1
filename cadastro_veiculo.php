@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST["tipo"] == "carro") {
         salvarRegistro("$nome|$ra|$placa", "carros.txt");
     } elseif ($_POST["tipo"] == "moto") {
-        salvarRegistro("$nome|$ra|$placa", "motos.txt");
+        salvarRegistro("$nome , $ra|$placa", "motos.txt");
     }
 }
 ?>
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
         <label for="nome">Nome Completo:</label>
         <input type="text" id="nome" name="nome" required><br><br>
-        <label for="ra">Registro Acadêmico (R.A.):</label>
+        <label for="ra">RA:</label>
         <input type="text" id="ra" name="ra" required><br><br>
         <label for="placa">Placa:</label>
         <input type="text" id="placa" name="placa" required><br><br>
@@ -51,8 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Cadastrar">
     </form>
     <br>
-    <a href="visualizar_carros.php">Visualizar carros</a><br>
-    <a href="visualizar_motos.php">Visualizar motos</a><br><br>
+    <a href="carros.txt">Visualizar carros</a><br>
+    <a href="motos.txt">Visualizar motos</a><br><br>
     <a href="index.php?logout=true">Logout</a>
 </body>
 </html>

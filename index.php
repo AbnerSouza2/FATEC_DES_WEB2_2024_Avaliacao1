@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se os campos de login e senha estão corretos
     if ($_POST["login"] == "portaria" && $_POST["senha"] == "FatecAraras") {
         $_SESSION["logged_in"] = true;
-        header("Location: dashboard.php");
+        header("Location: cadastro_veiculo.php");
         exit();
     } else {
         $error = "Login ou senha incorretos.";
@@ -26,9 +26,13 @@ if (isset($_GET["logout"])) {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Login</h2>
+    <div class="container">
+    
+    <div class="box"><h2 class="textlogin">Login</h2>
     <?php if (isset($error)) { echo "<p>$error</p>"; } ?>
     <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
         <label for="login">Login:</label>
@@ -37,5 +41,7 @@ if (isset($_GET["logout"])) {
         <input type="password" id="senha" name="senha" required><br><br>
         <input type="submit" value="Entrar">
     </form>
+    </div>
+    </div>
 </body>
 </html>
