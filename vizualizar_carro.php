@@ -7,22 +7,21 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
     exit();
 }
 
-
-// Lê e exibe os registros de motos
-$motos = file("motos.txt", FILE_IGNORE_NEW_LINES);
+// Lê e exibe os registros de carros
+$carros = file("carros.txt", FILE_IGNORE_NEW_LINES);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Visualizar Motos</title>
+    <title>Visualizar Carros</title>
 </head>
 <body>
-    <h2>Motos Cadastradas</h2>
+    <h2>Carros Cadastrados</h2>
     <ul>
-        <?php foreach ($motos as $moto) {
-            echo "<li>$moto</li>";
+        <?php foreach ($carros as $carro) {
+            echo "<li>$carro</li>";
         } ?>
     </ul>
     <br>

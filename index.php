@@ -31,15 +31,15 @@ if (isset($_GET["logout"])) {
 </head>
 <body>
     <div class="container">
-    
-    <div class="box"><h2 class="textlogin">Login</h2>
+       
+    <div class="box"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Logo_fatec_araras.png" alt=""><h2 class="textlogin">Login</h2>
     <?php if (isset($error)) { echo "<p>$error</p>"; } ?>
     <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
         <label for="login">Login:</label>
         <input type="text" id="login" name="login" required><br><br>
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" required><br><br>
-        <input type="submit" value="Entrar">
+        <input class="botaoentrar" type="submit" value="Entrar">
     </form>
     </div>
     </div>
