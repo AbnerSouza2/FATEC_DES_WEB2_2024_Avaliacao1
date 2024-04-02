@@ -32,32 +32,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Cadastro de veiculos</title>
     
 </head>
+
 <body>
+<script>
+    function exibirMensagem() {
+        alert("Cadastro de veículo realizado com sucesso!");
+    }
+</script>
 
 
     <div class="container-cadastro">
     <div class="box-cadastro"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Logo_fatec_araras.png" alt=""> <h2 claas="textlogin-cadastro">Cadastro de Veículos</h2><br>
-    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome"  placeholder="Nome Completo"required><br><br>
-        <label for="ra"> RA: </label>
-        <input type="text" id="ra" name="ra" placeholder="RA Aluno" required><br><br>
-        <label for="placa">Placa:</label>
-        <input type="text" id="placa" name="placa" placeholder="Tipo de veiculo" required><br><br>
+    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>"onsubmit="exibirMensagem()">
+        <label class="labelleft" for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome"  placeholder="Insira o nome Completo"required><br><br>
+        <label class="labelleft" for="ra"> RA: </label>
+        <input type="text" id="ra" name="ra" placeholder="Insira o RA do aluno" required><br><br>
+        <label class="labelleft" for="placa">Placa do veículo:</label>
+        <input type="text" id="placa" name="placa" placeholder="Insira a placa do veiculo" required><br><br>
         <label for="tipo">Tipo de Veículo:</label>
         <select id="tipo" name="tipo">
             <option value="carro">Carro</option>
             <option value="moto">Moto</option>
         </select><br><br>
-        <input type="submit" value="Cadastrar">
+        <input class="botaocadastrar" type="submit" value="Cadastrar">
     </form><br>
-    <a href="vizualizar_carro.php">Visualizar carros</a><br>
-    <a href="vizualizar_moto.php">Visualizar motos</a><br>
+    <a href="vizualizar_carro.php">Visualizar carros</a><br><br>
+    <a href="vizualizar_moto.php">Visualizar motos</a><br><br>
     <a href="index.php?logout=true">Logout</a>
     <br>
     </div>
